@@ -5,11 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WordPressの集いブログ</title>
-  <link rel="stylesheet" href="https://newcss.net/new.min.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
   <header>
-    <div>WordPressの集い</div>
+    <div class="p-sitename">WordPressの集い</div>
 
     <nav>
       <ul>
@@ -21,48 +21,48 @@
     </nav>
   </header>
 
-  <h1>WordPressの集いブログ</h1>
+  <div class="p-hero">
+    <h1>WordPressの集いブログ</h1>
+  </div>
 
   <main>
-    <article>
-      <h3>ブログのタイトルが入ります</h3>
-      <figure>
-        <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
-          srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
-      </figure>
-      <time datetime="">2021.05.02</time>
-      <p>記事の抜粋を何文字取得して表示しま[･･･]</p>
-      <p><a href="./category/hoge/">カテゴリーA</a></p>
-      <a href="./single.html">記事を見る</a>
-    </article>
+    <div class="p-roop">
+      <article>
+        <h3>ブログのタイトルが入ります</h3>
+        <figure>
+          <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
+            srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
+        </figure>
+        <time datetime="">2021.05.02</time>
+        <p>記事の抜粋を何文字取得して表示しま[･･･]</p>
+        <p><a href="./category/hoge/">カテゴリーA</a></p>
+        <a class="p-btn" href="./single.html">記事を見る</a>
+      </article>
 
-    <hr>
+      <article>
+        <h3>ブログのタイトルが入ります</h3>
+        <figure>
+          <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
+            srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
+        </figure>
+        <time datetime="">2021.05.02</time>
+        <p>記事の抜粋を何文字取得して表示しま[･･･]</p>
+        <p><a href="./category/hoge/">カテゴリーB</a></p>
+        <a class="p-btn" href="./single.html">この記事を見る</a>
+      </article>
 
-    <article>
-      <h3>ブログのタイトルが入ります</h3>
-      <figure>
-        <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
-          srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
-      </figure>
-      <time datetime="">2021.05.02</time>
-      <p>記事の抜粋を何文字取得して表示しま[･･･]</p>
-      <p><a href="./category/hoge/">カテゴリーB</a></p>
-      <a href="./single.html">この記事を見る</a>
-    </article>
-
-    <hr>
-
-    <article>
-      <h3>ブログのタイトルが入ります</h3>
-      <figure>
-        <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
-          srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
-      </figure>
-      <time datetime="">2021.05.02</time>
-      <p>記事の抜粋を何文字取得して表示しま[･･･]</p>
-      <p><a href="./category/hoge/">カテゴリーB</a></p>
-      <a href="./single.html">この記事を見る</a>
-    </article>
+      <article>
+        <h3>ブログのタイトルが入ります</h3>
+        <figure>
+          <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
+            srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
+        </figure>
+        <time datetime="">2021.05.02</time>
+        <p>記事の抜粋を何文字取得して表示しま[･･･]</p>
+        <p><a href="./category/hoge/">カテゴリーB</a></p>
+        <a class="p-btn" href="./single.html">この記事を見る</a>
+      </article>
+    </div>
 
     <hr>
 
@@ -87,39 +87,41 @@
     </section>
   </main>
 
-  <aside>
-    <h2>新着記事</h2>
-    <ul>
-      <li><a href="./">記事A</a></li>
-      <li><a href="./">記事B</a></li>
-      <li><a href="./">記事C</a></li>
-    </ul>
-  </aside>
+  <div class="p-sidebar">
+    <aside>
+      <h2>新着記事</h2>
+      <ul>
+        <li><a href="./">記事A</a></li>
+        <li><a href="./">記事B</a></li>
+        <li><a href="./">記事C</a></li>
+      </ul>
+    </aside>
 
-  <aside>
-    <h2>カテゴリー</h2>
-    <ul>
-      <li><a href="./">カテゴリーA</a></li>
-      <li><a href="./">カテゴリーB</a></li>
-      <li>
-        <a href="./">カテゴリーC</a>
-        <ul>
-          <li><a href="./">カテゴリーC - 01</a></li>
-          <li><a href="./">カテゴリーC - 02</a></li>
-          <li><a href="./">カテゴリーC - 03</a></li>
-        </ul>
-      </li>
-    </ul>
-  </aside>
+    <aside>
+      <h2>カテゴリー</h2>
+      <ul>
+        <li><a href="./">カテゴリーA</a></li>
+        <li><a href="./">カテゴリーB</a></li>
+        <li>
+          <a href="./">カテゴリーC</a>
+          <ul>
+            <li><a href="./">カテゴリーC - 01</a></li>
+            <li><a href="./">カテゴリーC - 02</a></li>
+            <li><a href="./">カテゴリーC - 03</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
 
-  <aside>
-    <h2>アーカイブ</h2>
-    <ul>
-      <li><a href="./">2021（5）</a></li>
-      <li><a href="./">2020（3）</a></li>
-      <li><a href="./">2019（10）</a></li>
-    </ul>
-  </aside>
+    <aside>
+      <h2>アーカイブ</h2>
+      <ul>
+        <li><a href="./">2021（5）</a></li>
+        <li><a href="./">2020（3）</a></li>
+        <li><a href="./">2019（10）</a></li>
+      </ul>
+    </aside>
+  </div>
 
   <footer>
     <small>&copy; WordPressの集い</small>

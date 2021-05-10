@@ -1,0 +1,14 @@
+{
+  "name": "study-wordpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch --style=compressed --no-source-map assets/sass/main.scss:assets/css/main.css"
+  },
+  "author": "matatabiii",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.32.8"
+  }
+}
