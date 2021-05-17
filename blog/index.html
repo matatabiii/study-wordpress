@@ -4,127 +4,182 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WordPressの集いブログ</title>
+  <title>トップページ - WordPressの集い</title>
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-  <header>
-    <div class="p-sitename">WordPressの集い</div>
+  <header id="header" class="l-header">
+    <div class="l-header__logo">
+      <div class="l-header__logo__label"><a href="/">WordPressの集い</a></div>
+    </div>
 
-    <nav>
-      <ul>
-        <li><a href="../">ホーム</a></li>
-        <li><a href="./">ブログ</a></li>
-        <li><a href="../contact/">お問い合わせ</a></li>
-        <li><a href="../works/">実績</a></li>
+    <nav class="l-header__nav l-nav">
+      <ul class="l-nav__lists">
+        <li class="l-nav__item"><a class="l-nav__link" href="../">ホーム</a></li>
+        <li class="l-nav__item"><a class="l-nav__link" href="../blog/">ブログ</a></li>
+        <li class="l-nav__item"><a class="l-nav__link" href="../contact/">お問い合わせ</a></li>
+        <li class="l-nav__item"><a class="l-nav__link" href="../works/">実績</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="p-hero">
-    <h1>WordPressの集いブログ</h1>
+  <div class="l-hero">
+    <h1 class="l-hero__label">ブログ</h1>
   </div>
 
-  <main>
-    <div class="p-roop">
-      <article>
-        <h3>ブログのタイトルが入ります</h3>
-        <figure>
-          <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
-            srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
-        </figure>
-        <time datetime="">2021.05.02</time>
-        <p>記事の抜粋を何文字取得して表示しま[･･･]</p>
-        <p><a href="./category/hoge/">カテゴリーA</a></p>
-        <a class="p-btn" href="./single.html">記事を見る</a>
-      </article>
+  <div class="l-content">
+    <main id="main" class="l-main">
+      <div class="p-post-group">
+        <div class="p-post-group__col">
+          <article class="p-feed-post">
+            <h3 class="p-feed-post__title"><a href="./single.html">ブログのタイトルが入りますよよよ</a></h3>
 
-      <article>
-        <h3>ブログのタイトルが入ります</h3>
-        <figure>
-          <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
-            srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
-        </figure>
-        <time datetime="">2021.05.02</time>
-        <p>記事の抜粋を何文字取得して表示しま[･･･]</p>
-        <p><a href="./category/hoge/">カテゴリーB</a></p>
-        <a class="p-btn" href="./single.html">この記事を見る</a>
-      </article>
+            <figure class="p-feed-post__thumb">
+              <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
+                srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
+            </figure>
 
-      <article>
-        <h3>ブログのタイトルが入ります</h3>
-        <figure>
-          <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
-            srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
-        </figure>
-        <time datetime="">2021.05.02</time>
-        <p>記事の抜粋を何文字取得して表示しま[･･･]</p>
-        <p><a href="./category/hoge/">カテゴリーB</a></p>
-        <a class="p-btn" href="./single.html">この記事を見る</a>
-      </article>
+            <time class="p-feed-post__time" datetime="">2021.05.02</time>
+
+            <p
+              class="p-feed-post__text">記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま</p>
+
+            <p class="p-feed-post__tags"><a class="p-feed-post__tag" href="./blog/category/hoge/">カテゴリーA</a></p>
+
+            <p class="p-feed-post__btn">
+                  <a class="p-btn" href="./single.html">記事を見る</a>
+                </p>
+          </article>
+        </div>
+
+        <div class="p-post-group__col">
+          <article class="p-feed-post">
+            <h3 class="p-feed-post__title"><a href="./single.html">WordPressの基本を</a></h3>
+
+            <figure class="p-feed-post__thumb">
+              <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
+                srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
+            </figure>
+
+            <time class="p-feed-post__time" datetime="">2021.05.02</time>
+
+            <p
+              class="p-feed-post__text">記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま</p>
+
+            <p class="p-feed-post__tags"><a class="p-feed-post__tag" href="./blog/category/hoge/">カテゴリーA</a></p>
+
+            <p class="p-feed-post__btn">
+                  <a class="p-btn" href="./single.html">記事を見る</a>
+                </p>
+          </article>
+        </div>
+
+        <div class="p-post-group__col">
+          <article class="p-feed-post">
+            <h3 class="p-feed-post__title"><a href="./single.html">ブログのタイトルが入りますよよよ</a></h3>
+
+            <figure class="p-feed-post__thumb">
+              <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
+                srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
+            </figure>
+
+            <time class="p-feed-post__time" datetime="">2021.05.02</time>
+
+            <p
+              class="p-feed-post__text">記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま</p>
+
+            <p class="p-feed-post__tags"><a class="p-feed-post__tag" href="./blog/category/hoge/">カテゴリーA</a></p>
+
+            <p class="p-feed-post__btn">
+                  <a class="p-btn" href="./single.html">記事を見る</a>
+                </p>
+          </article>
+        </div>
+
+        <div class="p-post-group__col">
+          <article class="p-feed-post">
+            <h3 class="p-feed-post__title"><a href="./single.html">WordPressの基本を</a></h3>
+
+            <figure class="p-feed-post__thumb">
+              <img src="https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像"
+                srcset="https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像" width="240" height="160" alt="">
+            </figure>
+
+            <time class="p-feed-post__time" datetime="">2021.05.02</time>
+
+            <p
+              class="p-feed-post__text">記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま記事の抜粋を何文字取得して表示しま</p>
+
+            <p class="p-feed-post__tags"><a class="p-feed-post__tag" href="./blog/category/hoge/">カテゴリーA</a></p>
+
+            <p class="p-feed-post__btn">
+                  <a class="p-btn" href="./single.html">記事を見る</a>
+                </p>
+          </article>
+        </div>
+      </div>
+
+      <div class="p-pager-archive">
+        <ul class="p-pager-archive__items">
+          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">01</a></li>
+          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">02</a></li>
+          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">03</a></li>
+          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">04</a></li>
+          <li class="p-pager-archive__item">･･･</li>
+          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">05</a></li>
+        </ul>
+      </div>
+    </main>
+
+    <div id="sidebar" class="l-sidebar">
+      <aside class="p-sidebar">
+        <h2 class="p-sidebar__header">新着記事</h2>
+        <ul class="p-sidebar__nav">
+          <li><a href="../">記事A</a></li>
+          <li><a href="../">記事B</a></li>
+          <li><a href="../">記事C</a></li>
+        </ul>
+      </aside>
+
+      <aside class="p-sidebar">
+        <h2 class="p-sidebar__header">カテゴリー</h2>
+        <ul class="p-sidebar__nav">
+          <li><a href="../">カテゴリーA</a></li>
+          <li><a href="../">カテゴリーB</a></li>
+          <li>
+            <a href="../">カテゴリーC</a>
+            <ul>
+              <li><a href="../">カテゴリーC - 01</a></li>
+              <li><a href="../">カテゴリーC - 02</a></li>
+              <li><a href="../">カテゴリーC - 03</a></li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+
+      <aside class="p-sidebar">
+        <h2 class="p-sidebar__header">アーカイブ</h2>
+        <ul class="p-sidebar__nav">
+          <li><a href="../">2021（5）</a></li>
+          <li><a href="../">2020（3）</a></li>
+          <li><a href="../">2019（10）</a></li>
+        </ul>
+      </aside>
     </div>
-
-    <hr>
-
-    <div><a href="./">古い記事</a></div>
-    <div><a href="./">新しい記事</a></div>
-    <div>
-      <ul>
-        <li><a href="./">01</a></li>
-        <li><a href="./">02</a></li>
-        <li><a href="./">03</a></li>
-        <li><a href="./">04</a></li>
-        <li>･･･</li>
-        <li><a href="./">05</a></li>
-      </ul>
-    </div>
-
-    <hr>
-
-    <section>
-      <h2>メモ欄</h2>
-      <p>ご自由にメモをどうぞ</p>
-    </section>
-  </main>
-
-  <div class="p-sidebar">
-    <aside>
-      <h2>新着記事</h2>
-      <ul>
-        <li><a href="./">記事A</a></li>
-        <li><a href="./">記事B</a></li>
-        <li><a href="./">記事C</a></li>
-      </ul>
-    </aside>
-
-    <aside>
-      <h2>カテゴリー</h2>
-      <ul>
-        <li><a href="./">カテゴリーA</a></li>
-        <li><a href="./">カテゴリーB</a></li>
-        <li>
-          <a href="./">カテゴリーC</a>
-          <ul>
-            <li><a href="./">カテゴリーC - 01</a></li>
-            <li><a href="./">カテゴリーC - 02</a></li>
-            <li><a href="./">カテゴリーC - 03</a></li>
-          </ul>
-        </li>
-      </ul>
-    </aside>
-
-    <aside>
-      <h2>アーカイブ</h2>
-      <ul>
-        <li><a href="./">2021（5）</a></li>
-        <li><a href="./">2020（3）</a></li>
-        <li><a href="./">2019（10）</a></li>
-      </ul>
-    </aside>
   </div>
 
-  <footer>
-    <small>&copy; WordPressの集い</small>
+  <footer id="footer" class="l-footer">
+    <aside class="p-memo">
+      <header class="p-memo__header">
+        <h2 class="p-heading-main">メモ欄</h2>
+      </header>
+
+      <div class="p-memo__textarea">
+        <p>ご自由にメモをどうぞ</p>
+      </div>
+    </aside>
+
+    <small class="l-footer__copyright">&copy; WordPressの集い</small>
   </footer>
 </body>
 </html>

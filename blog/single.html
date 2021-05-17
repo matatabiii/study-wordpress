@@ -4,31 +4,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>記事タイトル | WordPressの集いブログ</title>
+  <title>トップページ - WordPressの集い</title>
   <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
-  <header>
-    <div class="p-sitename">WordPressの集い</div>
+  <header id="header" class="l-header">
+    <div class="l-header__logo">
+      <div class="l-header__logo__label"><a href="/">WordPressの集い</a></div>
+    </div>
 
-    <nav>
-      <ul>
-        <li><a href="../">ホーム</a></li>
-        <li><a href="./">ブログ</a></li>
-        <li><a href="../contact/">お問い合わせ</a></li>
-        <li><a href="../works/">実績</a></li>
+    <nav class="l-header__nav l-nav">
+      <ul class="l-nav__lists">
+        <li class="l-nav__item"><a class="l-nav__link" href="./">ホーム</a></li>
+        <li class="l-nav__item"><a class="l-nav__link" href="./blog/">ブログ</a></li>
+        <li class="l-nav__item"><a class="l-nav__link" href="./contact/">お問い合わせ</a></li>
+        <li class="l-nav__item"><a class="l-nav__link" href="./works/">実績</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="p-hero">
-    <div>WordPressの集いブログ</div>
+  <div class="l-hero">
+    <div class="l-hero__label">ブログ</div>
   </div>
 
-  <main>
-    <div class="p-roop">
+  <div class="l-content">
+    <main id="main" class="l-main">
       <article>
-        <h1>ブログのタイトルが入ります</h1>
+        <h1 class="p-heading-main">ブログのタイトルが入ります</h1>
 
         <time datetime="">2021.05.02</time>
 
@@ -67,58 +69,63 @@
           <p>こんな今夜のまね出るた下ないた。</p>
         </div>
       </article>
+
+      <div class="p-pager-post">
+        <div class="p-pager-post__btn"><a class="p-pager-post__link" href="./">古い記事</a></div>
+        <div class="p-pager-post__btn"><a class="p-pager-post__link" href="./">一覧に戻る</a></div>
+        <div class="p-pager-post__btn"><a class="p-pager-post__link" href="./">新しい記事</a></div>
+      </div>
+    </main>
+
+    <div id="sidebar" class="l-sidebar">
+      <aside class="p-sidebar">
+        <h2 class="p-sidebar__header">新着記事</h2>
+        <ul class="p-sidebar__nav">
+          <li><a href="./">記事A</a></li>
+          <li><a href="./">記事B</a></li>
+          <li><a href="./">記事C</a></li>
+        </ul>
+      </aside>
+
+      <aside class="p-sidebar">
+        <h2 class="p-sidebar__header">カテゴリー</h2>
+        <ul class="p-sidebar__nav">
+          <li><a href="./">カテゴリーA</a></li>
+          <li><a href="./">カテゴリーB</a></li>
+          <li>
+            <a href="./">カテゴリーC</a>
+            <ul>
+              <li><a href="./">カテゴリーC - 01</a></li>
+              <li><a href="./">カテゴリーC - 02</a></li>
+              <li><a href="./">カテゴリーC - 03</a></li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+
+      <aside class="p-sidebar">
+        <h2 class="p-sidebar__header">アーカイブ</h2>
+        <ul class="p-sidebar__nav">
+          <li><a href="./">2021（5）</a></li>
+          <li><a href="./">2020（3）</a></li>
+          <li><a href="./">2019（10）</a></li>
+        </ul>
+      </aside>
     </div>
-
-    <hr>
-
-    <div><a href="./">古い記事</a> | <a href="./">新しい記事</a></div>
-
-    <hr>
-
-    <section>
-      <h2>メモ欄</h2>
-      <p>ご自由にメモをどうぞ</p>
-    </section>
-  </main>
-
-  <div class="p-sidebar">
-    <aside>
-      <h2>新着記事</h2>
-      <ul>
-        <li><a href="./">記事A</a></li>
-        <li><a href="./">記事B</a></li>
-        <li><a href="./">記事C</a></li>
-      </ul>
-    </aside>
-
-    <aside>
-      <h2>カテゴリー</h2>
-      <ul>
-        <li><a href="./">カテゴリーA</a></li>
-        <li><a href="./">カテゴリーB</a></li>
-        <li>
-          <a href="./">カテゴリーC</a>
-          <ul>
-            <li><a href="./">カテゴリーC - 01</a></li>
-            <li><a href="./">カテゴリーC - 02</a></li>
-            <li><a href="./">カテゴリーC - 03</a></li>
-          </ul>
-        </li>
-      </ul>
-    </aside>
-
-    <aside>
-      <h2>アーカイブ</h2>
-      <ul>
-        <li><a href="./">2021（5）</a></li>
-        <li><a href="./">2020（3）</a></li>
-        <li><a href="./">2019（10）</a></li>
-      </ul>
-    </aside>
   </div>
 
-  <footer>
-    <small>&copy; WordPressの集い</small>
+  <footer id="footer" class="l-footer">
+    <aside class="p-memo">
+      <header class="p-memo__header">
+        <h2 class="p-heading-main">メモ欄</h2>
+      </header>
+
+      <div class="p-memo__textarea">
+        <p>ご自由にメモをどうぞ</p>
+      </div>
+    </aside>
+
+    <small class="l-footer__copyright">&copy; WordPressの集い</small>
   </footer>
 </body>
 </html>
