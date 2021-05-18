@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>トップページ - WordPressの集い</title>
-  <link rel="stylesheet" href="./assets/css/main.css">
-</head>
-<body>
-  <header id="header" class="l-header">
-    <div class="l-header__logo">
-      <h1 class="l-header__logo__label"><a href="/">WordPressの集い</a></h1>
-    </div>
+<?php
+  $root_path = './';
 
-    <nav class="l-header__nav l-nav">
-      <ul class="l-nav__lists">
-        <li class="l-nav__item"><a class="l-nav__link" href="./">ホーム</a></li>
-        <li class="l-nav__item"><a class="l-nav__link" href="./blog/">ブログ</a></li>
-        <li class="l-nav__item"><a class="l-nav__link" href="./contact/">お問い合わせ</a></li>
-        <li class="l-nav__item"><a class="l-nav__link" href="./works/">実績</a></li>
-      </ul>
-    </nav>
-  </header>
+  include_once( __DIR__ . '/includes/header.php' );
+?>
 
   <main id="main" class="l-main">
     <section class="p-section">
@@ -217,18 +198,6 @@
     </section>
   </main>
 
-  <footer id="footer" class="l-footer">
-    <aside class="p-memo">
-      <header class="p-memo__header">
-        <h2 class="p-heading-main">メモ欄</h2>
-      </header>
-
-      <div class="p-memo__textarea">
-        <p>ご自由にメモをどうぞ</p>
-      </div>
-    </aside>
-
-    <small class="l-footer__copyright">&copy; WordPressの集い</small>
-  </footer>
-</body>
-</html>
+<?php
+  include_once( __DIR__ . '/includes/footer.php' );
+?>
