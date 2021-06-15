@@ -31,7 +31,7 @@ node_modules/
 **/wp/wp-content/ai1wm-backups/
 **/wp/wp-content/uploads/
 **/wp/wp-content/themes/*
-!**/wp/wp-content/themes/fv_project2021/
+!**/wp/wp-content/themes/wp-study/
 
 # ignore log files and databases
 *.log
