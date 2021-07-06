@@ -12,3 +12,16 @@ add_action( 'after_setup_theme', function () {
   add_image_size( '240x160' , 240 , 160 , true );
   add_image_size( '240x160@2x' , 480 , 320 , true );
 } );
+
+
+add_filter( 'get_archives_link', 'my_archives_link' );
+function my_archives_link( $output ) {
+	$output = preg_replace('/<\/a>\s*(&nbsp;)\((\d+)\)/','（$2）</a>',$output);
+	return $output;
+}
+
+add_filter( 'wp_list_categories', 'filter_to_wp_list_categories', 10, 2 );
+function filter_to_wp_list_categories( $output, $args ) {
+  $output = preg_replace('/<\/a>\s*\((\d+)\)/',' ($1)</a>',$output);
+  return $output;
+}
