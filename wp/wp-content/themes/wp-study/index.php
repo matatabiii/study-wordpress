@@ -30,19 +30,22 @@
             $term_list_html_format = '<a class="p-feed-post__tag p-feed-post__tag--%3$s" href="%2$s">%1$s</a>　';
             $term_list_html = '';
             $get_the_terms = get_the_terms( get_the_ID(), 'category' );
+
             if ( $get_the_terms && ! is_wp_error( $get_the_terms ) ) :
               foreach ( $get_the_terms as $term ) :
                 $term_name = esc_html( $term->name );
                 $term_slug = esc_html( $term->slug );
-                $term_url = get_term_link( $term_slug, 'category' );
+                $term_url = get_term_link( $term );
 
                 // フォーマットに合わせて設定
-                $term_list_html .= sprintf(
-                  $term_list_html_format,
-                  $term_name,
-                  $term_url,
-                  $term_slug
-                );
+                // $term_list_html .= sprintf(
+                //   $term_list_html_format,
+                //   $term_name, // %1$s
+                //   $term_url, // %2$s
+                //   $term_slug // %3$s
+                // );
+
+                $term_list_html .= '<a class="p-feed-post__tag p-feed-post__tag--' . $term_slug . '" href="' . $term_url . '">' . $term_name . '</a>　';
               endforeach;
             endif;
 
@@ -51,7 +54,7 @@
             $thumbnail_url_2x = get_the_post_thumbnail_url( get_the_ID(), '240x160@2x' );
 
             // デフォルト画像
-            if ( ! $thumbnail_url && ! $thumbnail_url_2x ) :
+            if ( ! $thumbnail_url || ! $thumbnail_url_2x ) :
               $thumbnail_url = 'https://placehold.jp/24/cccccc/ffffff/240x160.png?text=サムネイル画像';
               $thumbnail_url_2x = 'https://placehold.jp/24/cccccc/ffffff/480x320.png?text=サムネイル画像';
             endif;
@@ -95,41 +98,7 @@
       </div>
     </main>
 
-    <div id="sidebar" class="l-sidebar">
-      <aside class="p-sidebar">
-        <h2 class="p-sidebar__header">新着記事</h2>
-        <ul class="p-sidebar__nav">
-          <li><a href="../">記事A</a></li>
-          <li><a href="../">記事B</a></li>
-          <li><a href="../">記事C</a></li>
-        </ul>
-      </aside>
-
-      <aside class="p-sidebar">
-        <h2 class="p-sidebar__header">カテゴリー</h2>
-        <ul class="p-sidebar__nav">
-          <li><a href="../">カテゴリーA</a></li>
-          <li><a href="../">カテゴリーB</a></li>
-          <li>
-            <a href="../">カテゴリーC</a>
-            <ul>
-              <li><a href="../">カテゴリーC - 01</a></li>
-              <li><a href="../">カテゴリーC - 02</a></li>
-              <li><a href="../">カテゴリーC - 03</a></li>
-            </ul>
-          </li>
-        </ul>
-      </aside>
-
-      <aside class="p-sidebar">
-        <h2 class="p-sidebar__header">アーカイブ</h2>
-        <ul class="p-sidebar__nav">
-          <li><a href="../">2021（5）</a></li>
-          <li><a href="../">2020（3）</a></li>
-          <li><a href="../">2019（10）</a></li>
-        </ul>
-      </aside>
-    </div>
+    <?php get_sidebar(); ?>
   </div>
 
 <?php

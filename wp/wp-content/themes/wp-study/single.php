@@ -10,46 +10,48 @@
 
   <div class="l-content">
     <main id="main" class="l-main">
+
+    <?php while( have_posts() ) : the_post(); ?>
+
+      <?php
+      // ■投稿に割り当てられたタクソノミーのターム（カスタム分類の項目）を取得する
+      $term_list_html_format = '<li><a href="%2$s">%1$s</a></li>';
+      $term_list_html = '';
+      $get_the_terms = get_the_terms( get_the_ID(), 'category' );
+
+      if ( $get_the_terms && ! is_wp_error( $get_the_terms ) ) :
+        foreach ( $get_the_terms as $term ) :
+          $term_name = esc_html( $term->name );
+          $term_slug = esc_html( $term->slug );
+          $term_url = get_term_link( $term );
+
+          // フォーマットに合わせて設定
+          $term_list_html .= sprintf(
+            $term_list_html_format,
+            $term_name, // %1$s
+            $term_url, // %2$s
+          );
+        endforeach;
+      endif;
+      ?>
+
       <article>
-        <h1 class="p-heading-main">ブログのタイトルが入ります</h1>
+        <h1 class="p-heading-main"><?php the_title(); ?></h1>
 
-        <time datetime="">2021.05.02</time>
+        <time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php the_time( 'Y.m.d' ) ?></time>
 
+        <?php if ( ! empty( $term_list_html ) ) : ?>
         <ul>
-          <li><a href="./category/hoge/">カテゴリーA</a></li>
-          <li><a href="./category/hoge/">カテゴリーB</a></li>
-          <li><a href="./category/hoge/">カテゴリーC</a></li>
+          <?php echo $term_list_html; ?>
         </ul>
+        <?php endif; ?>
 
         <div class="c-editor">
-          <figure>
-            <img src="https://placehold.jp/24/cccccc/ffffff/800x600.png?text=記事画像"
-              srcset="https://placehold.jp/24/cccccc/ffffff/1600x1200.png?text=記事画像" width="800" height="600" alt="">
-          </figure>
-          <p>甘藍はセロのあんばいひとりげに畑に戻っ兎ました。それからたった俄ましたというあとんた。</p>
-          <p>生意気たましことなはたするとゃくしゃしていましたがいつまでもつづけての生たちのうちをはどんとくたくたましですと、わたしなんて糸を落ちるがっんんな。云い過ぎおまえも楽譜にいそがしいですてはじめの虫の先生屋であるき第一いっしょらのかっこうをとるて行きましまし。おいもいまついながらいまし。ゴーシュも三しいっしょのようを云いがいろまし。長椅子もかっこう手だのそれを立っていた。</p>
-          <p>眼は遁をまだにもっからむとそっくりゆうべのとおりぐんぐんに一疋のようでおろして皿がこらえてすっかりかっこうへ云っばくれだ。どうもごくごくドレミファをゴーシュがすましましまし。</p>
-          <p>ぼくなるべくに眼を泣きてケースを叩くますた。おしまいをだしだまし。「かっこうへ知った。</p>
-          <p>かっこう、これを音楽。むしっ。」</p>
-          <p>みんなも夕方の所のいきなりいまのままをもっですまい。曲は晩をご室とだして狸を狸をなりて一杯一生けん命まげられたうちが食ったまし。どうかかっか見ろと、弾きてきかててましてゴーシュにそれから楽長をぞろぞろつまみはいっだまし。「トォテテテテテイい。いちどから教えるた。</p>
-          <p>指さしべ。何は何を譜がくぐがじゃあ見ろぼうは永くんましとよ。」そっちは気の毒そうでもっがねえ譜穴にありたりた狸の子がはまっでとっやちがうているます。いちどは急いて泪でやめましまし。</p>
-          <p>おれはまるで別は情ないんまして硝子はなるべく黒いんたです。「たくさんの前のゴーシュより。教わり。」何はまっすぐつりあげますなら。音楽はゴーシュをなっでこんどです。</p>
-          <p>けれどもはじめはしきりにばったな。悪いごつごつだらとわらいてまわって狸にあげようまし写真にくわえてそれからまるで先生で拍終るまします。</p>
-          <p>しばらくかとすきはてようようなっでしきて痛くわけをは今夜はガラスの療ででし。雲は誰にいっぺんまし手のなかそこをむしったようによコップゴーシュへ天井を歩きていつか考えんになるてくださいたた。</p>
-          <p>「するとすこしたくさんのゴーシュ。行っ。」うともぐり込みて考えないかと来るからすぐ口から足がまるで熟してこどもしめたない。</p>
-          <p>「元気まし。もうけりばくれましょ。</p>
-          <p>そののは口の下うんな。</p>
-          <p>何からあのがたがた呆れましのと。</p>
-          <p>口。病気なんてしいんと戸一時も何気ないんたよ。</p>
-          <p>たばこが棚がふりまわしてい何家をこんな泪いっしょぼんやりたり裏あたりのざとじぶんのまでのドレミファ楽長を向いていないどうもそれのちがいは思わずちがうんた。</p>
-          <p>音楽ホールさん。さんをもくぐのじとね。</p>
-          <p>楽長というのからがさがさあわているた。</p>
-          <p>しもなっもゴーシュというへんでちょっと云いたもんた。</p>
-          <p>まずはまるでうまくセロの助けとわからたはぞ。わたしほど何じゃやろたかっこうの位を弾きからみんなの二つにぶっつかっながら引きさいようたのた、出なあ、いきなり叫ぶがはじめたてな。ろよろこんその楽長かぶれ者にわたし二本のなかをねこを云いようたものなは、どこへはしばらく普通ますがよ。いや前も鍛冶はどこでも、のぞき込んて六日をはばたばたかっこうをやっていなる。」誰はかっこうへ弾いて、するとドレミファへ煮て顔をそろえとそれかが考えて直しとなおしましまし。</p>
-          <p>セロは大きな生意気うこどもふうないセロにつづけてロマチックシューマンのんがいるて嵐へ急いてどんなに床へすっましたて、ドレミファときかせはじめでた大までいえでし手前した中に今で頭をはこどもげひるまたらだ。そんな次痛く児も何かベロリですわうまいんへ引きずっかっこう屋がしてくださいました。ドレミファと弾きてはそれは舌の意地悪あとんが思い切っ出しがっございゴーシュ鼠を、あとは何にこう一寸なが飛びつきていまはぼうの人のその音楽が猫の戸棚を弾けたりふしぎのシュッとはいったりつけてまわりすぎへなるてちょうどなるてしまうとやったんで。ゴーシュにときにしてたまえをなって一生けん命の面白みみずくが出すんない。みんなもおれだけた。</p>
-          <p>こんな今夜のまね出るた下ないた。</p>
+          <?php the_content(); ?>
         </div>
       </article>
+
+    <?php endwhile; ?>
 
       <div class="p-pager-post">
         <div class="p-pager-post__btn"><a class="p-pager-post__link" href="./">古い記事</a></div>
@@ -58,41 +60,7 @@
       </div>
     </main>
 
-    <div id="sidebar" class="l-sidebar">
-      <aside class="p-sidebar">
-        <h2 class="p-sidebar__header">新着記事</h2>
-        <ul class="p-sidebar__nav">
-          <li><a href="./">記事A</a></li>
-          <li><a href="./">記事B</a></li>
-          <li><a href="./">記事C</a></li>
-        </ul>
-      </aside>
-
-      <aside class="p-sidebar">
-        <h2 class="p-sidebar__header">カテゴリー</h2>
-        <ul class="p-sidebar__nav">
-          <li><a href="./">カテゴリーA</a></li>
-          <li><a href="./">カテゴリーB</a></li>
-          <li>
-            <a href="./">カテゴリーC</a>
-            <ul>
-              <li><a href="./">カテゴリーC - 01</a></li>
-              <li><a href="./">カテゴリーC - 02</a></li>
-              <li><a href="./">カテゴリーC - 03</a></li>
-            </ul>
-          </li>
-        </ul>
-      </aside>
-
-      <aside class="p-sidebar">
-        <h2 class="p-sidebar__header">アーカイブ</h2>
-        <ul class="p-sidebar__nav">
-          <li><a href="./">2021（5）</a></li>
-          <li><a href="./">2020（3）</a></li>
-          <li><a href="./">2019（10）</a></li>
-        </ul>
-      </aside>
-    </div>
+    <?php get_sidebar(); ?>
   </div>
 
 <?php
