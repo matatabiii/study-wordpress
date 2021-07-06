@@ -11,5 +11,7 @@
 
     <small class="l-footer__copyright">&copy; WordPressの集い</small>
   </footer>
+
+  <?php wp_footer(); ?>
 </body>
 </html>
