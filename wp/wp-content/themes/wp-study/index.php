@@ -86,16 +86,7 @@
         <?php endif; ?>
       </div>
 
-      <div class="p-pager-archive">
-        <ul class="p-pager-archive__items">
-          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">01</a></li>
-          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">02</a></li>
-          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">03</a></li>
-          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">04</a></li>
-          <li class="p-pager-archive__item">･･･</li>
-          <li class="p-pager-archive__item"><a class="p-pager-archive__link" href="../">05</a></li>
-        </ul>
-      </div>
+      <?php pager_number_list(); ?>
     </main>
 
     <?php get_sidebar(); ?>
