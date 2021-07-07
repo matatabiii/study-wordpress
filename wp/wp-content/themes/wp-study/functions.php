@@ -14,6 +14,66 @@ add_action( 'after_setup_theme', function () {
 } );
 
 
+/**
+ * タイトルタグ関連
+ */
+// タイトルタグのサポート
+add_theme_support( 'title-tag' );
+
+// タイトル文字内のセパレーターを変更
+add_filter( 'document_title_separator', function( $sep ) {
+  $sep = '|';
+  return $sep;
+} );
+
+// タイトルタグの出力を制御
+add_filter( 'document_title_parts', function( $title ) {
+  global $post, $paged;
+  $sep = '|';
+  $post_type_name = get_post_type( $post );
+  $post_type_object = get_post_type_object( $post_type_name );
+  // $queriedObject = get_queried_object();
+  // $page_base_sitename = function_exists( 'get_field' ) ? esc_html( get_field( 'fv_project_acf_sitename', 'option' ) ) : null;
+
+  // $title['title'] = 'タイトル';
+  // $title['page']  = '1';
+  // $title['tagline'] = 'キャッチフレーズ';
+  // $title[ 'site' ] = 'サイト名';
+
+  // $title[ 'site' ] = $page_base_sitename;
+
+  if ( is_front_page() ) :
+    unset( $title[ 'tagline' ] );
+  elseif ( is_archive() ) :
+    $post_type_label = $post_type_object->label;
+
+    // 投稿タイプがpost（標準の投稿）の時には表示設定で指定した固定ページのタイトルを設定
+    if ( $post_type_name === 'post' ) :
+      $post_type_label = get_the_title( get_option( 'page_for_posts' ) );
+    endif;
+
+    // 2ページ目以降
+    if ( is_paged() ) :
+      unset( $title[ 'page' ] );
+      $title[ 'title' ] .=  'の一覧 - ' . $paged . 'ページ目 ' . $sep . ' ' . $post_type_label;
+    else :
+    // 1ページ目
+      $title[ 'title' ] .=  'の一覧 ' . $sep . ' ' . $post_type_label;
+    endif;
+  elseif ( is_home() ) :
+    // 2ページ目以降
+    if ( is_paged() ) :
+      unset( $title[ 'page' ] );
+      $title[ 'title' ] .=  ' - ' . $paged . 'ページ目 ';
+    endif;
+  endif;
+
+  return $title;
+});
+
+/**
+ * サイドバー関連
+ */
 add_filter( 'get_archives_link', 'my_archives_link' );
 function my_archives_link( $output ) {
 	$output = preg_replace('/<\/a>\s*(&nbsp;)\((\d+)\)/','（$2）</a>',$output);
@@ -26,6 +86,10 @@ function filter_to_wp_list_categories( $output, $args ) {
   return $output;
 }
 
+
+/**
+ * ページャー関連
+ */
 // 連番ページャー
 function pager_number_list () {
   global $wp_query, $paged;
