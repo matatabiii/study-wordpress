@@ -13,13 +13,9 @@ add_action( 'after_setup_theme', function () {
   add_image_size( '240x160@2x' , 480 , 320 , true );
 } );
 
-
 /**
  * タイトルタグ関連
  */
-// タイトルタグのサポート
-add_theme_support( 'title-tag' );
-
 // タイトル文字内のセパレーターを変更
 add_filter( 'document_title_separator', function( $sep ) {
   $sep = '|';
@@ -32,18 +28,15 @@ add_filter( 'document_title_parts', function( $title ) {
   $sep = '|';
   $post_type_name = get_post_type( $post );
   $post_type_object = get_post_type_object( $post_type_name );
-  // $queriedObject = get_queried_object();
-  // $page_base_sitename = function_exists( 'get_field' ) ? esc_html( get_field( 'fv_project_acf_sitename', 'option' ) ) : null;
 
   // $title['title'] = 'タイトル';
   // $title['page']  = '1';
   // $title['tagline'] = 'キャッチフレーズ';
   // $title[ 'site' ] = 'サイト名';
 
-  // $title[ 'site' ] = $page_base_sitename;
-
   if ( is_front_page() ) :
-    unset( $title[ 'tagline' ] );
+    $title[ 'tagline' ] = '';
+
   elseif ( is_archive() ) :
     $post_type_label = $post_type_object->label;
 
@@ -54,7 +47,7 @@ add_filter( 'document_title_parts', function( $title ) {
 
     // 2ページ目以降
     if ( is_paged() ) :
-      unset( $title[ 'page' ] );
+      $title[ 'page' ] = '';
       $title[ 'title' ] .=  'の一覧 - ' . $paged . 'ページ目 ' . $sep . ' ' . $post_type_label;
     else :
     // 1ページ目
@@ -63,7 +56,7 @@ add_filter( 'document_title_parts', function( $title ) {
   elseif ( is_home() ) :
     // 2ページ目以降
     if ( is_paged() ) :
-      unset( $title[ 'page' ] );
+      $title[ 'page' ] = '';
       $title[ 'title' ] .=  ' - ' . $paged . 'ページ目 ';
     endif;
   endif;
