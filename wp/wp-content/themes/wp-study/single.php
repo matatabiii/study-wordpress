@@ -1,7 +1,8 @@
 <?php
-  $root_path = '../';
+  $set_fv_meta_description = 'テスト';
+  $set_fv_meta_og_image = get_template_directory_uri() . 'assets/images/' . 'og-sample.jpg';
 
-  include_once( __DIR__ . '/includes/header.php' );
+  get_header();
 ?>
 
   <div class="l-hero">
@@ -84,5 +85,5 @@
   </div>
 
 <?php
-  include_once( __DIR__ . '/includes/footer.php' );
+  get_footer();
 ?>

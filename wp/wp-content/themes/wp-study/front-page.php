@@ -3,11 +3,8 @@
  * Template Name: トップページ
  */
 ?>
-
 <?php
-  $root_path = './';
-
-  include_once( __DIR__ . '/includes/header.php' );
+  get_header();
 ?>
 
   <main id="main" class="l-main">
@@ -205,5 +202,5 @@
   </main>
 
 <?php
-  include_once( __DIR__ . '/includes/footer.php' );
+  get_footer();
 ?>

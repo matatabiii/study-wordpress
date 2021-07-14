@@ -3,11 +3,8 @@
  * Template Name: 投稿
  */
 ?>
-
 <?php
-  $root_path = '../';
-
-  include_once( __DIR__ . '/includes/header.php' );
+  get_header();
 ?>
 
 <div class="l-hero">
@@ -93,5 +90,5 @@
   </div>
 
 <?php
-  include_once( __DIR__ . '/includes/footer.php' );
+  get_footer();
 ?>
