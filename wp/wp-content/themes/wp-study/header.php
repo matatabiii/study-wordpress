@@ -38,15 +38,20 @@
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="<?php echo $fv_meta_og_type; ?>">
   <meta property="og:image" content="<?php echo $fv_meta_og_image; ?>">
-  <meta property="og:site_name" content="WEBサイト名">
+
+  <!-- サイト名 -->
+  <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
 
   <!-- canonical url -->
-  <meta property="og:url" content="カレントURL">
-  <link rel="canonical" href="基本カレントURL">
+  <!-- 今いるページのURL -->
+  <meta property="og:url" content="<?php echo get_pagenum_link( get_query_var( 'paged' ) ); ?>">
+  <?php if ( is_home() ) : ?>
+  <link rel="canonical" href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>">
+  <?php endif; ?>
 
   <!-- favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" size="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png">
+  <link rel="apple-touch-icon" size="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png">
 
   <?php wp_head(); ?>
 </head>
