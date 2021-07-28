@@ -7,32 +7,6 @@
   get_header();
 ?>
 
-  <?php
-  function echo_name ( $name ) {
-    $name_html = '
-    <div class="l-hero">
-      %3$s
-      <h1 class="l-hero__label">%1$s</h1>
-      %2$s
-    </div>
-    ';
-
-    echo sprintf(
-      $name_html,
-      'ああああ',
-      'aaaaa',
-      '3333'
-    );
-  }
-
-  echo_name( 'ブログです', 'ああああ' );
-  echo_name( 'ブログで' );
-
-  $format = 'There are %2$s monkeys in the %1$s';
-  echo sprintf($format, 'ああああ', 'いいい');
-  ?>
-
-
   <div class="l-content">
     <main id="main" class="l-main">
       <div class="p-post-group">
