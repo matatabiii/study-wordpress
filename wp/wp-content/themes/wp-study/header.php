@@ -21,7 +21,7 @@
   // og:image（初期値）
   $fv_meta_og_image = get_template_directory_uri() . 'assets/images/' . 'og-image.jpg';
   if ( ! empty( $set_fv_meta_og_image ) ) :
-    $fv_meta_og_image = $set_fv_meta_og_image;
+    $fv_meta_og_image = esc_url( $set_fv_meta_og_image );
   endif;
 
   // sprintf();
@@ -51,7 +51,8 @@
 
   <!-- favicon -->
   <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.png">
-  <link rel="apple-touch-icon" size="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" size="180x180"
+    href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png">
 
   <?php wp_head(); ?>
 </head>

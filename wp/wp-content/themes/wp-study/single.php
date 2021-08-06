@@ -1,19 +1,49 @@
 <?php
-  $set_fv_meta_description = 'テスト';
-  $set_fv_meta_og_image = get_template_directory_uri() . 'assets/images/' . 'og-sample.jpg';
+  // OG画像の処理
+  $image_id = get_field('fv_og_image');
+  if( $image_id ) {
+    // sizeは add_image_size で追加したもの
+    $image = wp_get_attachment_image_src( $image_id, 'og_image' );
+    // OG画像を設定
+    $set_fv_meta_og_image = $image[ 0 ];
+
+    // どんなデータが取得できているかの確認
+    // echo '<pre>';
+    // var_dump( $image );
+    // echo '</pre>';
+
+     /*
+    $image = array(4) {
+      [0]=> url
+      [1]=> width
+      [2]=> height
+      [3]=> リサイズされているか
+    }
+    */
+  }
+
+  $set_fv_meta_description = get_field( 'fv_description' );
 
   get_header();
+
+  // fv_description
+  // fv_og_image
 ?>
 
-  <div class="l-hero">
-    <div class="l-hero__label">ブログ</div>
-  </div>
+<?php
+?>
 
-  <div class="l-content">
-    <main id="main" class="l-main">
+<img src="hoge.jpg" srcset="hoge.jpg 1x, hoge@2x.jpg 2x" width="" height="" class="p-pic" alt="">
+
+<div class="l-hero">
+  <div class="l-hero__label">ブログ</div>
+</div>
+
+<div class="l-content">
+  <main id="main" class="l-main">
     <?php while( have_posts() ) : the_post(); ?>
 
-      <?php
+    <?php
       // ■投稿に割り当てられたタクソノミーのターム（カスタム分類の項目）を取得する
       $term_list_html_format = '<li><a href="%2$s">%1$s</a></li>';
       $term_list_html = '';
@@ -35,24 +65,24 @@
       endif;
       ?>
 
-      <article>
-        <h1 class="p-heading-main"><?php the_title(); ?></h1>
+    <article>
+      <h1 class="p-heading-main"><?php the_title(); ?></h1>
 
-        <time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php the_time( 'Y.m.d' ) ?></time>
+      <time datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>"><?php the_time( 'Y.m.d' ) ?></time>
 
-        <?php if ( ! empty( $term_list_html ) ) : ?>
-        <ul>
-          <?php echo $term_list_html; ?>
-        </ul>
-        <?php endif; ?>
+      <?php if ( ! empty( $term_list_html ) ) : ?>
+      <ul>
+        <?php echo $term_list_html; ?>
+      </ul>
+      <?php endif; ?>
 
-        <div class="c-editor">
-          <?php the_content(); ?>
-        </div>
-      </article>
+      <div class="c-editor">
+        <?php the_content(); ?>
+      </div>
+    </article>
 
     <?php endwhile; ?>
-      <?php
+    <?php
       // 前の記事の情報取得、html整形
       // https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_previous_post
       $previous_post = get_previous_post();
@@ -74,15 +104,16 @@
       endif;
       ?>
 
-      <div class="p-pager-post">
-        <?php echo $previous_post_html; ?>
-        <div class="p-pager-post__btn"><a class="p-pager-post__link" href="<?php echo home_url( '/blog' ) ?>">一覧に戻る</a></div>
-        <?php echo $next_post_html; ?>
+    <div class="p-pager-post">
+      <?php echo $previous_post_html; ?>
+      <div class="p-pager-post__btn"><a class="p-pager-post__link" href="<?php echo home_url( '/blog' ) ?>">一覧に戻る</a>
       </div>
-    </main>
+      <?php echo $next_post_html; ?>
+    </div>
+  </main>
 
-    <?php get_sidebar(); ?>
-  </div>
+  <?php get_sidebar(); ?>
+</div>
 
 <?php
   get_footer();
